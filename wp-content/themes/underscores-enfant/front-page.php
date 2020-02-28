@@ -35,7 +35,8 @@ get_header();
 			wp_reset_postdata();
 			*/
 			the_post();
-			$query = new WP_Query( array( 'category_name' => "devoir" ) );
+			$query = new WP_Query( array( 'category_name' => "devoir",
+			'posts_per_page' => 3 ) );
 			if ( $query->have_posts() ) {
     			while ( $query->have_posts() ) {
 						$query->the_post();
