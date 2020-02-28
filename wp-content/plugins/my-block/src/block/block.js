@@ -80,18 +80,9 @@ registerBlockType( 'cgb/block-my-block', {
 	 */
 	save: ( props ) => {
 		return (
-			<div className={ props.className }>
-				<p>
-					je suis un front super cool
-				</p>
-				<p>
-					It was created via{ ' ' }
-					<code>
-						<a href="https://github.com/ahmadawais/create-guten-block">
-							create-guten-block
-						</a>
-					</code>.
-				</p>
+			<div>
+				<h1>bonjour comment aller vous</h1>
+				<p>bienvenue sur mon site</p>
 			</div>
 		);
 	},
