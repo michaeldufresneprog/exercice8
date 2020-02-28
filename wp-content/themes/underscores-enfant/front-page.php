@@ -21,20 +21,6 @@ get_header();
 
 		<?php
 		while ( have_posts() ) :
-			/*
-		
-			$the_query = new WP_Query( array( 'category_name' => 'devoir' ) );
-			if ( $the_query->have_posts() ) {
-    			while ( $the_query->have_posts() ) {
-       				 $the_query->the_post();
-        				echo get_the_title();
-    				}
-			} 
-			else {
-				echo "no found";
-			}
-			wp_reset_postdata();
-			*/
 			the_post();
 			$query = new WP_Query( array( 'category_name' => "devoir",
 			'posts_per_page' => 3));
@@ -43,6 +29,19 @@ get_header();
 						$query->the_post();
 						echo '<h1>' . get_the_title() .  '</h1>';
 						echo '<p>' . the_excerpt() . '</p>';
+    				}
+			} 
+			else {
+				echo "no found";
+			}
+			wp_reset_postdata();
+			the_post();
+			$query = new WP_Query( array( 'category_name' => "evenement",
+			'posts_per_page' => 3));
+			if ( $query->have_posts() ) {
+    			while ( $query->have_posts() ) {
+						$query->the_post();
+						echo '<h2>' . get_the_title() .  '</h2>';
     				}
 			} 
 			else {
