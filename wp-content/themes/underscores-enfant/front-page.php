@@ -14,6 +14,7 @@
 
 get_header();
 ?>
+	<h2>les dernières nouvelles</h2>
 	<p>Je suis modifié par le front-page .php</p>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
@@ -36,12 +37,12 @@ get_header();
 			*/
 			the_post();
 			$query = new WP_Query( array( 'category_name' => "devoir",
-			'posts_per_page' => 3 ) );
+			'posts_per_page' => 3));
 			if ( $query->have_posts() ) {
     			while ( $query->have_posts() ) {
 						$query->the_post();
 						echo '<h1>' . get_the_title() .  '</h1>';
-						echo '<p>' . the_excerpt(0) . '</p>';
+						echo '<p>' . the_excerpt() . '</p>';
     				}
 			} 
 			else {

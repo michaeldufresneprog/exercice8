@@ -5,8 +5,8 @@ function my_theme_enqueue_styles() {
 }
 
 
-function wpdocs_custom_excerpt_length( $length ) {
-    return 2;
+function wpdocs_custom_excerpt_length() {
+    return 15;
 }
 add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
 
