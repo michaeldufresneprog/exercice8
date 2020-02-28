@@ -14,13 +14,14 @@
 
 get_header();
 ?>
-	<h1>Je suis modifié par le front-page .php</h1>
+	<p>Je suis modifié par le front-page .php</p>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
 		<?php
 		while ( have_posts() ) :
-			the_post();
+			/*
+		
 			$the_query = new WP_Query( array( 'category_name' => 'devoir' ) );
 			if ( $the_query->have_posts() ) {
     			while ( $the_query->have_posts() ) {
@@ -32,11 +33,14 @@ get_header();
 				echo "no found";
 			}
 			wp_reset_postdata();
-			$query = new WP_Query( array( 'author' => "Elena" ) );
+			*/
+			the_post();
+			$query = new WP_Query( array( 'category_name' => "devoir" ) );
 			if ( $query->have_posts() ) {
     			while ( $query->have_posts() ) {
-       				 $query->the_post();
-						echo '<p>' . get_the_title() .  '</p>';
+						$query->the_post();
+						echo '<h1>' . get_the_title() .  '</h1>';
+						echo '<p>' . the_excerpt(0) . '</p>';
     				}
 			} 
 			else {
